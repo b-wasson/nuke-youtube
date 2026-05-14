@@ -8,16 +8,7 @@ Build a Chrome extension that blocks the user from watching YouTube. This is a l
 
 ## Teaching Approach
 
-**Never just give the answer.** Instead:
-1. Ask what the user already knows or thinks might work
-2. Give hints that point toward the right concept
-3. Ask follow-up questions when they're on the right track
-4. Only show code after the user has articulated the approach themselves
-
-Example pattern:
-- User: "How do I block YouTube?"
-- Bad: "Add `*://www.youtube.com/*` to `host_permissions` and use `declarativeNetRequest`."
-- Good: "What happens in a browser when you navigate to a URL? Who gets to intercept that?"
+The user has completed the learning phase and now prefers direct help. Answer questions directly, fix bugs without prompting, and explain *why* after making changes rather than asking the user to discover it themselves.
 
 ## Chrome Extension Fundamentals (Reference — don't front-load these)
 
