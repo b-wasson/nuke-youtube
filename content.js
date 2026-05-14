@@ -1,0 +1,1 @@
+window.location = chrome.runtime.getURL('main.html');

@@ -6,5 +6,32 @@
     "action": {
       "default_popup": "main.html",
       "default_icon": "nuke.jpg"
-    }
+    },
+    
+  "declarative_net_request" : {
+        "rule_resources" : [{
+        "id": "1",
+        "enabled": true,
+        "path": "rules.json"
+        }]
+    },
+  
+    "permissions": [
+        "declarativeNetRequest",
+        "declarativeNetRequestFeedback"
+    ],
+
+    "host_permissions": [
+        "https://*.youtube.com/*",
+        "http://*.google.com/*"
+    ],
+
+
+    "content_scripts": [
+        {
+          "matches": ["https://*.youtube.com/*"],
+          "js": ["content.js"]
+        }
+      ]
+      
   }
