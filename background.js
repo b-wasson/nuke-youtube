@@ -12,7 +12,14 @@ function handleNavigation(details) {
 function reblockIfNoYoutubeTabs() {
     chrome.tabs.query({ url: ['https://www.youtube.com/*', 'https://youtube.com/*', 'https://*.youtube.com/*'] }, (tabs) => {
         if (tabs.length === 0) {
-            chrome.storage.local.set({ allowed: false });
+            chrome.storage.local.get(['startTime', 'totalTime'], (result) => {
+                const updates = { allowed: false, startTime: null };
+                if (result.startTime) {
+                    const elapsed = Date.now() - result.startTime;
+                    updates.totalTime = (result.totalTime || 0) + elapsed;
+                }
+                chrome.storage.local.set(updates);
+            });
         }
     });
 }
@@ -35,8 +42,8 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo) => {
 
 chrome.runtime.onMessage.addListener((message) => {
     if (message.action === 'allow') {
-        chrome.storage.local.set({ allowed: true }, () => {
-            chrome.tabs.create({ url: 'https://www.youtube.com' });
+        chrome.storage.local.set({ allowed: true, startTime: Date.now() }, () => {
+            chrome.tabs.create({ url: message.url });
         });
     }
 });
