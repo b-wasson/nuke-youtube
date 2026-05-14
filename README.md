@@ -1,6 +1,6 @@
 # Nuke YouTube
 
-A Chrome extension that blocks YouTube and replaces it with a focus prompt. When you try to visit YouTube, you're redirected to a page that asks if you really want to be distracted. If you do need to watch something specific, you can paste a direct video link — only that exact video is allowed through.
+Are you done wasting time spending hours mindlessly wasting your life away watching some youtube video that you will not remeber a lick about after you finish watching it. Look no further then this mindfull chrome extension that blocks YouTube and replaces it with a focus prompt. When you try to visit YouTube, you're redirected to a page that asks if you really want to be distracted. If you do need to watch something specific(tutorials, school work, or the best new music video), you can paste a direct video link — only that exact video is allowed through. Dont even try clicking on another video or you will be banned from watching. 
 
 ![Focus page](screenshots/focus-page.png)
 
@@ -14,7 +14,7 @@ A Chrome extension that blocks YouTube and replaces it with a focus prompt. When
 
 ## Installation
 
-This extension is not on the Chrome Web Store. You need to load it manually:
+This extension is not on the Chrome Web Store. You need to load it manually (sorry):
 
 1. Download or clone this repository to your computer
 2. Open Chrome and navigate to `chrome://extensions`
