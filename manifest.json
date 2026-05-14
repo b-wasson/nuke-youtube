@@ -12,7 +12,8 @@
     },
     "permissions": [
         "tabs",
-        "webNavigation"
+        "webNavigation",
+        "storage"
     ],
     "host_permissions": [
         "https://www.youtube.com/*",
