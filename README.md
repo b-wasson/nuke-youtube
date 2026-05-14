@@ -3,7 +3,6 @@
 A Chrome extension that blocks YouTube and replaces it with a focus prompt. When you try to visit YouTube, you're redirected to a page that asks if you really want to be distracted. If you do need to watch something specific, you can paste a direct video link — only that exact video is allowed through.
 
 ![Focus page](screenshots/focus-page.png)
-![Popup](screenshots/popup.png)
 
 ## Features
 
@@ -32,3 +31,5 @@ When you navigate to any YouTube URL, the extension's background script intercep
 - **Visiting YouTube** — you'll be redirected to the focus prompt
 - **Watching a specific video** — click "I need YouTube", paste a direct video URL (e.g. `https://www.youtube.com/watch?v=...`), and click Watch
 - **Viewing your stats** — click the extension icon in the Chrome toolbar to see your total tracked time
+
+![Popup](screenshots/popup.png)
