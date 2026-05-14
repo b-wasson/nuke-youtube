@@ -9,8 +9,12 @@ function formatTime(ms) {
     return `${seconds}s`;
 }
 
-function isValidYouTubeVideo(url) {
-    return /youtube\.com\/watch\?.*v=|youtu\.be\//.test(url);
+function extractVideoId(url) {
+    const watchMatch = url.match(/[?&]v=([^&]+)/);
+    if (watchMatch) return watchMatch[1];
+    const shortMatch = url.match(/youtu\.be\/([^?]+)/);
+    if (shortMatch) return shortMatch[1];
+    return null;
 }
 
 chrome.storage.local.get(['totalTime'], (result) => {
@@ -28,12 +32,13 @@ document.getElementById('allow-btn').addEventListener('click', () => {
 document.getElementById('watch-btn').addEventListener('click', () => {
     const url = document.getElementById('url-input').value.trim();
     const errorMsg = document.getElementById('error-msg');
+    const videoId = extractVideoId(url);
 
-    if (!isValidYouTubeVideo(url)) {
+    if (!videoId) {
         errorMsg.style.display = 'block';
         return;
     }
 
     errorMsg.style.display = 'none';
-    chrome.runtime.sendMessage({ action: 'allow', url });
+    chrome.runtime.sendMessage({ action: 'watchVideo', url, videoId });
 });

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Nuke YouTube</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        width: 220px;
+        padding: 16px;
+        background-color: #1c1c1e;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        color: #ffffff;
+      }
+
+      h2 {
+        font-size: 0.95rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        margin-bottom: 12px;
+        color: #ffffff;
+      }
+
+      .stat {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+      }
+
+      .label {
+        font-size: 0.7rem;
+        color: #636366;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+      }
+
+      .value {
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #ffffff;
+        letter-spacing: -0.02em;
+      }
+
+      .subvalue {
+        font-size: 0.75rem;
+        color: #8e8e93;
+        margin-top: 2px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Nuke YouTube</h2>
+    <div class="stat">
+      <span class="label">Time on YouTube</span>
+      <span class="value" id="total-time">—</span>
+      <span class="subvalue">tracked across all sessions</span>
+    </div>
+    <script src="popup.js"></script>
+  </body>
+</html>
