@@ -5,7 +5,12 @@
     "manifest_version": 3,
     "action": {
         "default_popup": "popup.html",
-        "default_icon": "nuke.jpg"
+        "default_icon": "nuke.png"
+    },
+    "icons": {
+        "16": "nuke.png",
+        "48": "nuke.png",
+        "128": "nuke.png"
     },
     "background": {
         "service_worker": "background.js"
