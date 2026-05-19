@@ -9,8 +9,9 @@ function formatTime(ms) {
     return `${seconds}s`;
 }
 
-chrome.storage.local.get(['totalTime'], (result) => {
+chrome.storage.local.get(['totalTime', 'visitCount'], (result) => {
     document.getElementById('total-time').textContent = result.totalTime
         ? formatTime(result.totalTime)
         : '0s';
+    document.getElementById('visit-count').textContent = result.visitCount || 0;
 });

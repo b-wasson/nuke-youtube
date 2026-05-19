@@ -17,11 +17,15 @@ function extractVideoId(url) {
     return null;
 }
 
-chrome.storage.local.get(['totalTime'], (result) => {
+chrome.storage.local.get(['totalTime', 'visitCount'], (result) => {
     const el = document.getElementById('total-time');
     el.textContent = result.totalTime
         ? `Total time on YouTube: ${formatTime(result.totalTime)}`
         : 'No YouTube time tracked yet.';
+
+    const countEl = document.getElementById('visit-count');
+    const count = result.visitCount || 0;
+    countEl.textContent = `YouTube visits: ${count} time${count !== 1 ? 's' : ''}`;
 });
 
 document.getElementById('allow-btn').addEventListener('click', () => {

@@ -1,4 +1,7 @@
 function redirectToBlock(tabId) {
+    chrome.storage.local.get(['visitCount'], (result) => {
+        chrome.storage.local.set({ visitCount: (result.visitCount || 0) + 1 });
+    });
     chrome.tabs.update(tabId, { url: chrome.runtime.getURL('main.html') });
 }
 
